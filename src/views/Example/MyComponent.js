@@ -20,6 +20,11 @@ class MyComponent extends React.Component {
             name: event.target.value
         })
     }
+
+    handleClickButton = () => {
+        console.log('hit the button')
+        alert('Click me')
+    }
     render() {
         return (
             <React.Fragment>
@@ -32,6 +37,9 @@ class MyComponent extends React.Component {
                 </div>
                 <div className="second">
                     My youtube channel: {this.state.channel}
+                </div>
+                <div className="third">
+                    <button onClick={() => this.handleClickButton()}>Click me</button>
                 </div>
             </React.Fragment>
         )
