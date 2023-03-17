@@ -5,7 +5,7 @@ class MyComponent extends React.Component {
 
     // key: value
     state = {
-        name: 'Ronaldo',
+        name: '',
         channel: 'Hung JP channel',
 
     }
@@ -16,16 +16,19 @@ class MyComponent extends React.Component {
      */
 
     handleOnChangeName = (event) => {
+        // merge
         this.setState({
-            name: event.target.value
+            name: event.target.value,
         })
     }
 
     handleClickButton = () => {
-        console.log('hit the button')
         alert('Click me')
     }
+
+    // re-render
     render() {
+        console.log('call render: ', this.state)
         return (
             <React.Fragment>
 
