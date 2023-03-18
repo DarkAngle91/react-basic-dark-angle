@@ -1,4 +1,5 @@
 import React from 'react';
+import ChildComponent from './ChildComponent';
 
 class MyComponent extends React.Component {
 
@@ -53,6 +54,12 @@ class MyComponent extends React.Component {
                         onClick={(event) => this.handleSubmit(event)}
                     />
                 </form>
+
+                <ChildComponent
+                    name={'Hung'}
+                    age={'25'}
+
+                />
             </>
         )
     }
