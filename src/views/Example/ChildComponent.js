@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './Demo.scss';
 // class component
 class ChildComponent extends React.Component {
     // re-render
@@ -14,6 +14,12 @@ class ChildComponent extends React.Component {
             showJob: !this.state.showJob
         })
     }
+
+    handleOnClickDelete = (job) => {
+        alert('Are you sure you want to delete')
+        this.props.deleteAJob(job)
+    }
+
     render() {
 
         let { arrJobs } = this.props // Cú pháp khai báo biến ngắn lại
@@ -24,7 +30,10 @@ class ChildComponent extends React.Component {
             <>
                 {showJob === false ?
                     <div>
-                        <button onClick={() => this.handleShowHide()}>Show</button>
+                        <button className="btn-show"
+                            onClick={() => this.handleShowHide()}>
+                            Show
+                        </button>
                     </div>
                     :
                     <>
@@ -34,6 +43,7 @@ class ChildComponent extends React.Component {
                                     return (
                                         <div key={item.id}>
                                             {item.title} - {item.salary}
+                                            <></> <span onClick={() => this.handleOnClickDelete(item)}>x</span>
                                         </div>
                                     )
                                 })
